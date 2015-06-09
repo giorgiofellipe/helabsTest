@@ -1,0 +1,92 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label class="sr-only" for="filterName">{{ 'NAME' | translate }}</label>
+                    <input type="name" class="form-control" id="filterName" placeholder="{{ 'NAME' | translate }}" ng-model="search.name">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="filterEmail">Email</label>
+                    <input type="text" class="form-control" id="filterEmail" placeholder="Email" ng-model="search.email">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" ng-model="search.phase">
+                        <option value="">{{ 'PHASE_SELECT' | translate}}</option>
+                        <option value="1">{{ 'PHASE1' | translate}}</option>
+                        <option value="2">{{ 'PHASE2' | translate}}</option>
+                        <option value="3">{{ 'PHASE3' | translate}}</option>
+                        <option value="4">{{ 'PHASE4' | translate}}</option>
+                        <option value="5">{{ 'PHASE5' | translate}}</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+            <ul class="item-list">
+                <li ng-repeat="item in items | filter:search | startFrom:currentPage*pageSize | limitTo:pageSize">
+                    <div class="situacao situacao-{{item.phase}}" ng-click="filterByPhase(item.phase)">
+                        <span>
+                            {{ 'PHASE' + item.phase | translate}}
+                        </span>
+                    </div>
+                    <div class="info" ng-click="showMore(item)">
+                        <h2 class="title">
+                            {{item.name}}
+                        </h2>
+                        <p class="desc">
+                            {{item.coverLetter}}
+                        </p>
+                    </div>
+                    <div class="social">
+                        <ul>
+                            <li class="website">
+                                <a href="{{item.site}}">
+                                    <span class="fa fa-globe"></span>
+                                </a>
+                            </li>
+                            <li class="linkedin">
+                                <a href="{{item.linkedin}}">
+                                    <span class="fa fa-linkedin"></span>
+                                </a>
+                            </li>
+                            <li class="github">
+                                <a href="{{item.github}}">
+                                    <span class="fa fa-github"></span>
+                                </a>
+                            </li>
+                            <li class="pinterest">
+                                <a href="{{item.pinterest}}">
+                                    <span class="fa fa-pinterest"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+            <ul class="pagination">
+                <li ng-class="{disabled: currentPage == 0}">
+                    <a aria-label="Previous" ng-click="previousPage()">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a>
+                        {{currentPage+1}}/{{numberOfPages()}}
+                    </a>
+                </li>
+                <li ng-class="{disabled: currentPage >= filteredItems.length / pageSize - 1 || filteredItems.length / pageSize - 1 <= 0 }">
+                    <a aria-label="Next" ng-click="nextPage()">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

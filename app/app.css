@@ -1,30 +1,223 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+body {
+    padding: 60px 0px;
+    background-color: rgb(220, 220, 220);
 }
 
-.menu:before {
-  content: "[";
+form {
+    margin: 20px 0;
 }
 
-.menu:after {
-  content: "]";
+.item-list {
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+.item-list > li {
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 5px #333333;
+    box-shadow: 0px 0px 5px #333333;
+    padding: 0px;
+    margin: 0px 0px 20px;
+}
+.item-list > li > div.situacao {
+    display: inline-block;
+    color: #FFFFFF;
+    padding: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 120px;
+}
+.item-list > li > div.situacao > span {
+    text-align: center;
+    width: 100%;
+}
+.situacao-1 {
+    background-color: #C52C66;
+}
+.situacao-2 {
+    background-color: #A552A7;
+}
+.situacao-3 {
+    background-color: #F44336;
+}
+.situacao-4 {
+    background-color: #4CAF50;
+}
+.situacao-5 {
+    background-color: #9E9E9E;
 }
 
-.menu > li {
-  display: inline;
+.item-list > li > div.situacao {
+    display: block;
+    font-size: 10pt;
+    font-weight: 200;
+    line-height: 1;
 }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+.item-list > li > img {
+    width: 100%;
+}
+.item-list > li > .info {
+    padding-top: 5px;
+    text-align: center;
+}
+.item-list > li > .info > .title {
+    font-size: 17pt;
+    font-weight: 700;
+    margin: 0px;
+}
+.item-list > li > .info > .desc {
+    font-size: 13pt;
+    font-weight: 300;
+    margin: 0px;
+}
+.item-list > li > .info > ul,
+.item-list > li > .social > ul {
+    display: table;
+    list-style: none;
+    margin: 10px 0px 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+.item-list > li > .social > ul {
+    margin: 0px;
+}
+.item-list > li > .info > ul > li,
+.item-list > li > .social > ul > li {
+    display: table-cell;
+    cursor: pointer;
+    color: rgb(30, 30, 30);
+    font-size: 11pt;
+    font-weight: 300;
+    padding: 3px 0px;
+}
+.item-list > li > .info > ul > li > a {
+    display: block;
+    width: 100%;
+    color: #1E1E1E;
+    text-decoration: none;
+}
+.item-list > li > .social > ul > li {
+    padding: 0px;
+}
+.item-list > li > .social > ul > li > a {
+    padding: 3px 0px;
+}
+.item-list > li > .info > ul > li:hover,
+.item-list > li > .social > ul > li:hover {
+    color: #1E1E1E;
+    background-color: #C8C8C8;
+}
+.linkedin a,
+.website a,
+.github a,
+.pinterest a {
+    display: block;
+    width: 100%;
+    color: #0077b5;
+}
+.github a,
+.website a {
+    color: #000000;
+}
+.pinterest a {
+    color: #bd081c;
+}
+.linkedin:hover a {
+    color: #FFFFFF;
+    background-color: #0077b5;
+}
+.github:hover a,
+.website:hover a{
+    color: #FFFFFF;
+    background-color: #000000;
+}
+.pinterest:hover a {
+    color: #FFFFFF;
+    background-color: #bd081c;
 }
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+@media (min-width: 768px) {
+    .item-list > li {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 160px;
+        padding: 0px;
+    }
+    .item-list > li > div.situacao,
+    .item-list > li > img  {
+        display: inline-block;
+    }
+    .item-list > li > div.situacao,
+    .item-list > li > img {
+        width: 120px;
+        float: left;
+    }
+    .item-list > li > .info {
+        overflow: hidden;
+        background-color: #F5F5F5;
+    }
+    .item-list > li > div.situacao,
+    .item-list > li > img {
+        display: table;
+        width: 120px;
+        height: 160px;
+        padding: 0px;
+        margin: 0px;
+        padding: 5px;
+    }
+    .item-list > li > div.situacao > span {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .item-list > li > .info {
+        position: relative;
+        height: 160px;
+        text-align: left;
+        padding-right: 40px;
+    }
+    .item-list > li > .info > .title,
+    .item-list > li > .info > .desc {
+        padding: 0px 10px;
+    }
+    .item-list > li > .info > ul {
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+    .item-list > li > .social {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        display: block;
+        width: 40px;
+    }
+    .item-list > li > .social > ul {
+        border-left: 1px solid #E6E6E6;
+    }
+    .item-list > li > .social > ul > li {
+        display: block;
+        padding: 0px;
+        width: 25%;
+    }
+    .item-list > li > .social > ul > li > a {
+        display: block;
+        width: 40px;
+        padding: 10px 0px 9px;
+    }
+}
+
+.table-applicant-about > tbody > tr > td:first-child {
+    font-weight: bold;
+}
+
+.table-applicant-about > tbody > tr:first-child > td {
+    border-top: 0;
+}
+
+.notes > li > span {
+    font-weight: bold;
 }

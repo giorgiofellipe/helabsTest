@@ -1,0 +1,58 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{item.name}} {{ 'DETAILS' | translate }}</h3>
+</div>
+<div class="modal-body">
+    <tabset>
+        <tab heading="{{ 'ABOUT' | translate }}">
+            <table class="table table-applicant-about">
+                <tbody>
+                    <tr>
+                        <td>{{ 'POSITION_INTENDED' | translate }}</td>
+                        <td>{{ item.positionIntended | translate }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'BIRTHDAY' | translate }}</td>
+                        <td>{{ item.birthday | date }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'GENDER' | translate }}</td>
+                        <td>{{ item.gender | translate }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'ADDRESS' | translate }}</td>
+                        <td>{{ item.address }}</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>{{ item.email }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'PHONE_NUMBER' | translate }}</td>
+                        <td>{{ item.phone }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ 'COVER_LETTER' | translate }}</td>
+                        <td>{{ item.coverLetter }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </tab>
+        <tab heading="{{ 'NOTES' | translate }}">
+            <div class="form-group">
+                <textarea class="form-control" rows="5" id="comment" ng-model="note"></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success" ng-click="addNote()">{{ 'ADD' | translate }}</button>
+            </div>
+            <ul class="notes">
+                <li ng-repeat="note in item.notes">
+                    <span>{{ note.date | date:"dd/MM/yyyy h:mm" }}:</span>
+                    {{ note.message }}
+                </li>
+            </ul>
+        </tab>
+    </tabset>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" ng-click="cancel()">Close</button>
+</div>
