@@ -3,7 +3,6 @@
 angular.module('myApp', [
   'ngRoute',
   'myApp.home',
-  'myApp.version',
   'myApp.awesomelist',
   'pascalprecht.translate'
 ])
