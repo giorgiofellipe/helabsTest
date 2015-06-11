@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="bower_components/angular-toggle-switch/angular-toggle-switch.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 
   <!-- inject:css -->
@@ -38,15 +39,39 @@
               </div>
               <nav class="hidden-xs">
                   <ul class="nav navbar-nav">
-                      <a href="#top" role="button" class="navbar-brand">
-                          HE:labs
+                    <a href="#top" role="button" class="navbar-brand">
+                      HE:labs
+                    </a>
+                    <li ng-class="{ active: isActive('/home')}">
+                      <a href="#/home">
+                        Home
                       </a>
-                      <li ng-class="{ active: isActive('/home')}"><a href="#/home">Home</a></li>
+                    </li>                      
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li>
+                      <toggle-switch
+                        ng-model="choosenLanguage"
+                        on-label="PT-BR"
+                        off-label="EN-US">
+                      </toggle-switch>
+                    </li>
                   </ul>
               </nav>
               <nav class="visible-xs collapse" ng-hide="!isCollapsed" collapse="!isCollapsed" style="height: 0;">
                   <ul class="nav navbar-nav">
-                      <li ng-class="{ active: isActive('/home')}"><a href="#/home" ng-click="isCollapsed = !isCollapsed">Home</a></li>
+                      <li ng-class="{ active: isActive('/home')}">
+                        <a href="#/home" ng-click="isCollapsed = !isCollapsed">
+                          Home
+                        </a>
+                      </li>
+                      <li>
+                        <toggle-switch
+                          ng-model="choosenLanguage"
+                          on-label="PT-BR"
+                          off-label="EN-US">
+                        </toggle-switch>
+                      </li>
                   </ul>
               </nav>
           </div>
@@ -72,5 +97,6 @@
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
   <script src="bower_components/angular-translate/angular-translate.min.js"></script>
   <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+  <script src="bower_components/angular-toggle-switch/angular-toggle-switch.min.js"></script>
 </body>
 </html>

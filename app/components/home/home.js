@@ -2,7 +2,7 @@
 
 angular.module('myApp.home', [])
 
-.controller('HomeCtrl', ['$scope', '$location', function($scope, $location) {
+.controller('HomeCtrl', ['$scope', '$location', '$translate', function($scope, $location, $translate) {
     $scope.isCollapsed = false;
     $scope.phases = [1,2,3,4,5];
     $scope.applicants = [
@@ -91,4 +91,21 @@ angular.module('myApp.home', [])
     $scope.isActive = function (viewLocation) {
       return viewLocation === $location.path();
     };
+    $scope.changeLanguage = function (langKey) {
+        console.log(langKey);
+      $translate.use(langKey);
+    };
+    $scope.$watch(
+      function($scope) {
+        return $scope.choosenLanguage;
+      },
+      function() {
+        if ($scope.choosenLanguage) {
+          $scope.changeLanguage('pt_BR');
+        } else {
+          $scope.changeLanguage('en_US');
+        }        
+      },
+      true
+    );
 }]);

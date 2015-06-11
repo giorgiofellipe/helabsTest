@@ -4,7 +4,8 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.home',
   'myApp.awesomelist',
-  'pascalprecht.translate'
+  'pascalprecht.translate',
+  'toggle-switch'
 ])
 .config(['$routeProvider', '$translateProvider', function($routeProvider, $translateProvider) {
     $routeProvider.when('/home', {
