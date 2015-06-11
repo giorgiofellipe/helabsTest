@@ -69,10 +69,6 @@ angular.module('myApp.awesomelist.awesomelist-directive', ['ui.bootstrap'])
             }
           });
         };
-
-        scope.filterByPhase = function(phase) {
-          alert(phase);
-        };
       }
 
     }

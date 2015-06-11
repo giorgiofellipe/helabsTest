@@ -26,13 +26,13 @@
     <div class="row">
         <div class="col-xs-12 col-sm-offset-1 col-sm-10">
             <ul class="item-list">
-                <li ng-repeat="item in items | filter:search | startFrom:currentPage*pageSize | limitTo:pageSize">
-                    <div class="phase phase-{{item.phase}}" ng-click="filterByPhase(item.phase)">
+                <li ng-repeat="item in items | orderBy:'phase' | filter:search | startFrom:currentPage*pageSize | limitTo:pageSize" ng-click="showMore(item)">
+                    <div class="phase phase-{{item.phase}}">
                         <span>
                             {{ 'PHASE' + item.phase | translate}}
                         </span>
                     </div>
-                    <div class="item-list-info" ng-click="showMore(item)">
+                    <div class="item-list-info">
                         <h2 class="title">
                             {{item.name}}
                         </h2>
