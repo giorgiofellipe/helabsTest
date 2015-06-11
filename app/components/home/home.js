@@ -2,7 +2,7 @@
 
 angular.module('myApp.home', [])
 
-.controller('HomeCtrl', ['$scope', '$location', '$translate', '$http', function($scope, $location, $translate, $http) {
+.controller('HomeCtrl', ['$scope', '$location', '$translate', '$http', '$localstorage', function($scope, $location, $translate, $http, $localstorage) {
     $scope.isCollapsed = false;
     $scope.phases = [1,2,3,4,5];
     $scope.applicants = [];
@@ -17,15 +17,15 @@ angular.module('myApp.home', [])
     };
     $scope.getApplicants();
 
-    //$scope.applicants = ;
-
     $scope.isActive = function (viewLocation) {
       return viewLocation === $location.path();
     };
+
     $scope.changeLanguage = function (langKey) {
-        console.log(langKey);
+      $localstorage.set('language',langKey);
       $translate.use(langKey);
     };
+
     $scope.$watch(
       function($scope) {
         return $scope.choosenLanguage;
@@ -39,4 +39,10 @@ angular.module('myApp.home', [])
       },
       true
     );
+
+    if ($localstorage.get('language') == 'pt_BR') {
+      $scope.choosenLanguage = true;
+    } else {
+      $scope.choosenLanguage = false;
+    }
 }]);

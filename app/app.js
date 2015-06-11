@@ -4,6 +4,7 @@ angular.module('myApp', [
   'ngRoute',
   'myApp.home',
   'myApp.awesomelist',
+  'myApp.localstorage',
   'pascalprecht.translate',
   'toggle-switch'
 ])
@@ -17,6 +18,14 @@ angular.module('myApp', [
       prefix: '/languages/',
       suffix: '.json'
     });
-
-    $translateProvider.preferredLanguage('pt_BR');
+}])
+.run(['$localstorage', '$translate', function($localstorage, $translate) {
+    var language = $localstorage.get('language');
+    console.log(language);
+    //if (!language) {
+    //  $localstorage.set('language', 'en_US');
+    //  language = $localstorage.get('language');
+    //}
+    console.log(language);
+    $translate.preferredLanguage(language);
 }]);
