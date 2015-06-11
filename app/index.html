@@ -50,11 +50,13 @@
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
                     <li>
-                      <toggle-switch
-                        ng-model="choosenLanguage"
-                        on-label="PT-BR"
-                        off-label="EN-US">
-                      </toggle-switch>
+                      <div class="toggle-switch-container">
+                        <toggle-switch
+                          ng-model="choosenLanguage"
+                          on-label="PT-BR"
+                          off-label="EN-US">
+                        </toggle-switch>
+                      </div>
                     </li>
                   </ul>
               </nav>
@@ -66,11 +68,13 @@
                         </a>
                       </li>
                       <li>
+                          <div class="toggle-switch-container">
                         <toggle-switch
                           ng-model="choosenLanguage"
                           on-label="PT-BR"
                           off-label="EN-US">
                         </toggle-switch>
+                              </div>
                       </li>
                   </ul>
               </nav>
