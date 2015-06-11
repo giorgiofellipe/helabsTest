@@ -8,7 +8,7 @@ angular.module('myApp', [
 ])
 .config(['$routeProvider', '$translateProvider', function($routeProvider, $translateProvider) {
     $routeProvider.when('/home', {
-      templateUrl: '/home/home.html',
+      templateUrl: '/components/home/home.html',
       controller: 'HomeCtrl'
     });
     $routeProvider.otherwise({redirectTo: '/home'});

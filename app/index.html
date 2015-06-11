@@ -13,8 +13,12 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+
+  <!-- inject:css -->
+  <link rel="stylesheet" href="shared/awesomelist/awesomelist.min.css">
+  <!-- endinject -->
+  <link rel="stylesheet" href="app.min.css">
 </head>
 <body>
   <!--[if lt IE 7]>
@@ -31,11 +35,13 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
-  <script src="home/home.js"></script>
-  <script src="components/awesomelist/awesomelist.js"></script>
-  <script src="components/awesomelist/awesomelist-directive.js"></script>
-  <script src="components/awesomelist/awesomelist-filter.js"></script>
-  <script src="components/awesomelist/applicant-info-controller.js"></script>
+  <!-- inject:js -->
+  <script src="components/home/home.js"></script>
+  <script src="shared/awesomelist/applicant-info-controller.js"></script>
+  <script src="shared/awesomelist/awesomelist-directive.js"></script>
+  <script src="shared/awesomelist/awesomelist-filter.js"></script>
+  <script src="shared/awesomelist/awesomelist.js"></script>
+  <!-- endinject -->
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
   <script src="bower_components/angular-translate/angular-translate.min.js"></script>
   <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>

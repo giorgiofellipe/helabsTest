@@ -4,7 +4,7 @@
             <form class="form-inline">
                 <div class="form-group">
                     <label class="sr-only" for="filterName">{{ 'NAME' | translate }}</label>
-                    <input type="name" class="form-control" id="filterName" placeholder="{{ 'NAME' | translate }}" ng-model="search.name">
+                    <input type="text" class="form-control" id="filterName" placeholder="{{ 'NAME' | translate }}" ng-model="search.name">
                 </div>
                 <div class="form-group">
                     <label class="sr-only" for="filterEmail">Email</label>
@@ -27,12 +27,12 @@
         <div class="col-xs-12 col-sm-offset-1 col-sm-10">
             <ul class="item-list">
                 <li ng-repeat="item in items | filter:search | startFrom:currentPage*pageSize | limitTo:pageSize">
-                    <div class="situacao situacao-{{item.phase}}" ng-click="filterByPhase(item.phase)">
+                    <div class="phase phase-{{item.phase}}" ng-click="filterByPhase(item.phase)">
                         <span>
                             {{ 'PHASE' + item.phase | translate}}
                         </span>
                     </div>
-                    <div class="info" ng-click="showMore(item)">
+                    <div class="item-list-info" ng-click="showMore(item)">
                         <h2 class="title">
                             {{item.name}}
                         </h2>
@@ -42,23 +42,23 @@
                     </div>
                     <div class="social">
                         <ul>
-                            <li class="website">
-                                <a href="{{item.site}}">
+                            <li class="social-item website">
+                                <a class="social-link" href="{{item.site}}">
                                     <span class="fa fa-globe"></span>
                                 </a>
                             </li>
-                            <li class="linkedin">
-                                <a href="{{item.linkedin}}">
+                            <li class="social-item linkedin">
+                                <a class="social-link" href="{{item.linkedin}}">
                                     <span class="fa fa-linkedin"></span>
                                 </a>
                             </li>
-                            <li class="github">
-                                <a href="{{item.github}}">
+                            <li class="social-item github">
+                                <a class="social-link" href="{{item.github}}">
                                     <span class="fa fa-github"></span>
                                 </a>
                             </li>
-                            <li class="pinterest">
-                                <a href="{{item.pinterest}}">
+                            <li class="social-item pinterest">
+                                <a class="social-link" href="{{item.pinterest}}">
                                     <span class="fa fa-pinterest"></span>
                                 </a>
                             </li>

@@ -25,7 +25,6 @@ angular.module('myApp.awesomelist.awesomelist-directive', ['ui.bootstrap'])
           },
           function() {
             scope.filteredItems = $filter('filter')(scope.items, scope.search);
-            console.log(scope.filteredItems)
           },
           true
         );
