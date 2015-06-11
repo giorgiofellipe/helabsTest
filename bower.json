@@ -1,8 +1,8 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
-  "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "name": "helabsTest",
+  "description": "An application made to HE:labs",
+  "version": "0.0.1",
+  "homepage": "https://github.com/giorgiofellipe/helabsTest",
   "license": "MIT",
   "private": true,
   "dependencies": {
