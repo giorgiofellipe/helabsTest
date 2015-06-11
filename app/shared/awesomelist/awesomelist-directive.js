@@ -14,16 +14,18 @@ angular.module('myApp.awesomelist.awesomelist-directive', ['ui.bootstrap'])
       },
       link: function(scope, element, attrs) {
         scope.currentPage = 0;
-        scope.pageSize = 10;
+        scope.pageSize = 5;
+        scope.currentIsLast = false;
 
         scope.shownItem = null;
 
-        scope.filteredItems = $filter('filter')(scope.items, scope.search);
+        scope.filteredItems = [];
         scope.$watch(
-          function(scope) {
-            return scope.search;
+          function() {
+            return [scope.items, scope.search];
           },
           function() {
+            scope.currentPage = 0;
             scope.filteredItems = $filter('filter')(scope.items, scope.search);
           },
           true
