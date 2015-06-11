@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>HE:labs - Test</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
@@ -24,7 +24,34 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-
+  <header class="navbar navbar-default navbar-fixed-top" ng-class="{ transparency: !isCollapsed }" ng-controller="HomeCtrl">
+      <div class="navbar-inner">
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3" ng-click="isCollapsed = !isCollapsed">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand visible-xs" href="#">HE:labs</a>
+              </div>
+              <nav class="hidden-xs">
+                  <ul class="nav navbar-nav">
+                      <a href="#top" role="button" class="navbar-brand">
+                          HE:labs
+                      </a>
+                      <li ng-class="{ active: isActive('/home')}"><a href="#/home">Home</a></li>
+                  </ul>
+              </nav>
+              <nav class="visible-xs collapse" ng-hide="!isCollapsed" collapse="!isCollapsed" style="height: 0;">
+                  <ul class="nav navbar-nav">
+                      <li ng-class="{ active: isActive('/home')}"><a href="#/home" ng-click="isCollapsed = !isCollapsed">Home</a></li>
+                  </ul>
+              </nav>
+          </div>
+      </div>
+  </header>
   <div ng-view>
 
   </div>

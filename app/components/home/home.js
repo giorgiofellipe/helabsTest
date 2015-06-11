@@ -2,7 +2,8 @@
 
 angular.module('myApp.home', [])
 
-.controller('HomeCtrl', ['$scope', function($scope) {
+.controller('HomeCtrl', ['$scope', '$location', function($scope, $location) {
+    $scope.isCollapsed = false;
     $scope.phases = [1,2,3,4,5];
     $scope.applicants = [
       {
@@ -86,4 +87,8 @@ angular.module('myApp.home', [])
         phaseDescription: 'Entrevista 2'
       }
     ];
+
+    $scope.isActive = function (viewLocation) {
+      return viewLocation === $location.path();
+    };
 }]);
