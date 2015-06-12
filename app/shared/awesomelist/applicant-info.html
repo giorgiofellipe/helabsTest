@@ -37,6 +37,28 @@
                 </tbody>
             </table>
         </tab>
+        <tab heading="{{ 'PREVIOUS_PHASES' | translate }}">
+            <table class="table table-applicant-about" ng-repeat="previousPhase in item.previousPhases">
+                <tbody>
+                <tr>
+                    <td colspan="2"><h4>{{ 'PHASE' + previousPhase.phase | translate }}</h4></td>
+                </tr>
+                <tr>
+                    <td>{{ 'PREVIOUS_PHASE_OUT_DATE' | translate }}</td>
+                    <td>{{ previousPhase.outDate | date:"dd/MM/yyyy HH:mm" }}</td>
+                </tr>
+                <tr>
+                    <td>{{ 'RATE' | translate }}</td>
+                    <td>{{ previousPhase.rate }}</td>
+                </tr>
+                <tr>
+                    <td>{{ 'NOTE' | translate }}</td>
+                    <td>{{ previousPhase.note }}</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </tab>
         <tab heading="{{ 'NOTES' | translate }}">
             <div class="form-group">
                 <textarea class="form-control" rows="5" id="comment" ng-model="note"></textarea>
@@ -46,7 +68,7 @@
             </div>
             <ul class="notes">
                 <li ng-repeat="note in item.notes">
-                    <span>{{ note.date | date:"dd/MM/yyyy h:mm" }}:</span>
+                    <span>{{ note.date | date:"dd/MM/yyyy HH:mm" }}:</span>
                     {{ note.message }}
                 </li>
             </ul>

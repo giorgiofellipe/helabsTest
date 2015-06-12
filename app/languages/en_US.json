@@ -1,4 +1,8 @@
 {
+  "PREVIOUS_PHASES": "Phases",
+  "PREVIOUS_PHASE_OUT_DATE": "Final Date",
+  "RATE": "Rate",
+  "NOTE": "Note",
   "PHASE_SELECT": "- Choose a Phase -",
   "ABOUT": "About",
   "NOTES": "Notes",

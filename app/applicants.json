@@ -1,5 +1,6 @@
 [
   {
+    "applicationDate": "2015-04-10T13:12:02-03:00",
     "positionIntended": "DESIGNER",
     "name": "John Doe",
     "email": "john@doe.com",
@@ -9,20 +10,21 @@
     "linkedin": "http://linkedin.com/profile/view?id=1726381362",
     "github": "https://github.com/johndoe",
     "resume": "absolute/path/to/resume",
-    "coverLetter": " Here goes my resume. Im applying to this awesome job just because Im awesome too! haha",
+    "coverLetter": " Here goes my resume. I'm applying to this awesome job just because Im awesome too! haha",
     "phase": 1,
     "notes": [
       {
-        "date": "2015-04-20 13:22:02-03",
+        "date": "2015-04-20T13:22:02-03:00",
         "message": "Describe some things that you judge relevants about the aplicant..."
       },
       {
-        "date": "2015-04-20 13:12:02-03",
+        "date": "2015-04-20T13:12:02-03:00",
         "message": "First thing about the applicant"
       }
     ]
   },
   {
+    "applicationDate": "2015-04-10T13:12:02-03:00",
     "positionIntended": "BACKEND_DEVELOPER",
     "name": "Marcos Wernersbach",
     "email": "mwernersbach@gmail.com",
@@ -33,9 +35,24 @@
     "github": "https://github.com/mwernersbach",
     "resume": "absolute/path/to/resume",
     "coverLetter": "",
-    "phase": 3
+    "phase": 3,
+    "previousPhases": [
+      {
+        "outDate": "2015-04-10T13:12:02-03:00",
+        "phase": 1,
+        "rate": 9,
+        "note": "Good communication skills. Seems to keep himself ever up to date"
+      },
+      {
+        "outDate": "2015-04-10T13:12:02-03:00",
+        "phase": 2,
+        "rate": 4,
+        "note": "Couldn't figure out what he expects about his career on HE:labs"
+      }
+    ]
   },
   {
+    "applicationDate": "2015-04-10T13:12:02-03:00",
     "positionIntended": "DESIGNER",
     "name": "Jane Doe",
     "email": "jane@doe.com",
@@ -45,10 +62,11 @@
     "linkedin": "http://linkedin.com/profile/view?id=2636783332",
     "github": "https://github.com/doejane",
     "resume": "absolute/path/to/resume",
-    "coverLetter": " I really dont know what to say",
+    "coverLetter": " I really don't know what to say",
     "phase": 5
   },
   {
+    "applicationDate": "2015-04-10T13:12:02-03:00",
     "positionIntended": "DESIGNER",
     "name": "Abbie Roat",
     "email": "aroat@gmail.com",
@@ -58,10 +76,11 @@
     "linkedin": "http://linkedin.com/profile/view?id=192873198273",
     "github": "https://github.com/aroat",
     "resume": "absolute/path/to/resume",
-    "coverLetter": " Here goes my resume. Im applying to this awesome job just because Im awesome too! haha",
+    "coverLetter": " Here goes my resume. Im applying to this awesome job just because I'm awesome too! haha",
     "phase": 4
   },
   {
+    "applicationDate": "2015-04-10T13:12:02-03:00",
     "positionIntended": "FRONTEND_DEVELOPER",
     "name": "Giorgio Fellipe",
     "email": "giorgiofellipe@gmail.com",
@@ -71,10 +90,19 @@
     "linkedin": "https://www.linkedin.com/profile/view?id=201944416&",
     "github": "https://github.com/giorgiofellipe",
     "resume": "absolute/path/to/resume",
-    "coverLetter": "Itll be a pleasure to work with so talented team",
-    "phase": 2
+    "coverLetter": "It'll be a pleasure to work with so talented team",
+    "phase": 2,
+    "previousPhases": [
+      {
+        "outDate": "2015-06-10T13:12:02-03:00",
+        "phase": 1,
+        "rate": 9,
+        "note": "Good communication skills. Seems to keep himself ever up to date"
+      }
+    ]
   },
   {
+    "applicationDate": "2015-04-10T13:12:02-03:00",
     "positionIntended": "FRONTEND_DEVELOPER",
     "name": "Someone Goodname",
     "email": "goodname@some.com",

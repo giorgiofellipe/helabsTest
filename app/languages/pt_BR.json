@@ -1,4 +1,8 @@
 {
+  "PREVIOUS_PHASES": "Etapas",
+  "PREVIOUS_PHASE_OUT_DATE": "Data Final",
+  "RATE": "Nota",
+  "NOTE": "Observação",
   "PHASE_SELECT": "- Selecione uma Etapa -",
   "ABOUT": "Sobre",
   "NOTES": "Observações",
