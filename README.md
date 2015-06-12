@@ -23,3 +23,42 @@ Nesta tela temos que ver todos os aplicantes e principais informações, consegu
 #### Tela de detalhes do aplicante:
 
 Tela com informações gerais do aplicante , passos que ele percorreu status de cada passo
+
+
+# Sobre
+
+## Dependências
+
+- [angular-bootstrap](https://angular-ui.github.io/bootstrap/)
+- [angular-translate](https://angular-translate.github.io/)
+
+## Features
+
+- App multi idiomático (PT-BR e EN-US a princípio, mas preparado para quantas forem desejadas);
+- Automatização de tarefas de desenvolvindo utilizando Gulp:
+    - Minificação do CSS (gulp-minify-css)
+    - Injeção automática de novos componentes (gulp-inject)
+
+## Como rodar?
+
+- Intalando as dependencias e componentes:
+
+`$ npm install`
+
+- Desenvolvendo (task gulp para observar alterações e atualizar arquivos de distribuição)
+
+`$ bower default`
+
+- Executar
+
+`$ npm start`
+
+## A melhorar
+
+- Testes unitários;
+
+#### Observações
+
+Foi utilizada a biblioteca de estilos Bootstrap, porém, nada impede de que seja utilizado Bourbon + Neat como a HE:labs! :)
+
+Como já esclarecido pra Cacau, não sou designer, só desenvolvedor.
