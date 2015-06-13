@@ -20,6 +20,9 @@ angular.module('myApp.awesomelist.awesomelist-directive', ['ui.bootstrap'])
         scope.shownItem = null;
 
         scope.filteredItems = [];
+
+        //watcher on items and search to fire the filter on every change made
+        //this will update the pagination controls
         scope.$watch(
           function() {
             return [scope.items, scope.search];
@@ -35,30 +38,21 @@ angular.module('myApp.awesomelist.awesomelist-directive', ['ui.bootstrap'])
           return Math.ceil(scope.filteredItems.length / scope.pageSize);
         };
 
+        //navigates to the previous page, if there's one
         scope.previousPage = function () {
           if (scope.currentPage > 0) {
             scope.currentPage = scope.currentPage - 1;
           }
         };
 
+        //navigates to the next page, if there's one
         scope.nextPage = function () {
           if (scope.currentPage < scope.filteredItems.length / scope.pageSize - 1) {
             scope.currentPage = scope.currentPage + 1;
           }
         };
 
-        scope.toggleShowItemOptions = function(item) {
-          if (scope.isItemShown(item)) {
-            scope.shownItem = null;
-          } else {
-            scope.shownItem = item;
-          }
-        };
-
-        scope.isItemShown = function(item) {
-          return scope.shownItem === item;
-        };
-
+        //open a modal with the applicant info
         scope.showMore = function(item) {
           $modal.open({
             animation: true,

@@ -7,6 +7,7 @@ angular.module('myApp.home', [])
     $scope.phases = [1,2,3,4,5];
     $scope.applicants = [];
 
+    //request the applicants list
     $scope.getApplicants = function() {
       $http.get('applicants.json').then(function(result) {
         $scope.applicants = result.data;
@@ -17,15 +18,18 @@ angular.module('myApp.home', [])
     };
     $scope.getApplicants();
 
+    //verify if the menu link is the current path
     $scope.isActive = function (viewLocation) {
       return viewLocation === $location.path();
     };
 
+    //changes the language and store in localstorage
     $scope.changeLanguage = function (langKey) {
       $localstorage.set('language',langKey);
       $translate.use(langKey);
     };
 
+    //watcher on switch button to verify what is the language choosen
     $scope.$watch(
       function($scope) {
         return $scope.choosenLanguage;
@@ -40,6 +44,7 @@ angular.module('myApp.home', [])
       true
     );
 
+    //when the controller is instantiated for the first time verify on localStorage the saved language
     if ($localstorage.get('language') == 'pt_BR') {
       $scope.choosenLanguage = true;
     } else {
